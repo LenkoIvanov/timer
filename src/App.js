@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import NavBar from "./NavBar.js";
+import {
+  Routes, 
+  Route,
+} from "react-router-dom";
+import Timer from "./Timer.js";
+import Countdown from "./Countdown.js"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  render() {
+    return(
+      <div>
+       <NavBar/>
+       <h1>Main Component</h1>
+       <Routes>
+        <Route path = "/" element = {<Timer/>}></Route>
+        <Route path = "/countdown" element = {<Countdown/>}></Route>
+       </Routes>
+      </div>
+    );
+  }
 }
 
 export default App;
